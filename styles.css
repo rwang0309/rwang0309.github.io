@@ -201,6 +201,17 @@ html[lang="en"] .alternate-name { font-family: var(--font); font-size: 28px; }
 .academic-link { display: inline-flex; align-items: center; justify-content: center; min-height: 35px; padding: 4px 11px; border: 1px solid #d5ded3; border-radius: 3px; color: var(--teal); font-size: 12px; text-decoration: none; white-space: nowrap; }
 .academic-link:hover { background: #f1f4eb; }
 .hero-focus { font-size: 19px; }
+.home-news { margin-bottom: 44px; padding-top: 44px; border-top: 1px solid var(--line); }
+.news-list { margin: 0; padding: 0; list-style: none; }
+.news-item { display: grid; grid-template-columns: 94px minmax(0,1fr); gap: 22px; padding: 18px 20px 18px 22px; border-top: 1px solid var(--line); }
+.news-item:first-child { border-top: 0; }
+.news-item.news-pinned { margin-bottom: 8px; padding-left: 20px; border-left: 2px solid var(--teal); background: #f2f5ed; }
+.news-date { padding-top: 2px; color: var(--muted); font-size: 14px; line-height: 1.8; font-variant-numeric: tabular-nums; }
+.news-body { min-width: 0; }
+.news-title { margin-bottom: 9px; font-size: 17px; line-height: 1.65; }
+.news-copy { margin-bottom: 0; color: #42534b; font-size: 15px; line-height: 1.9; overflow-wrap: anywhere; }
+.news-copy strong { color: var(--ink); font-weight: 600; }
+.news-contact { display: inline-block; margin-top: 10px; font-size: 14px; }
 .home-biography { padding-top: 44px; border-top: 1px solid var(--line); }
 .home-section-title { margin-bottom: 27px; font-size: 28px; }
 .home-biography .timeline-grid { margin-top: 40px; }
@@ -230,6 +241,11 @@ html[lang="en"] .alternate-name { font-family: var(--font); font-size: 28px; }
  html[lang="en"] .alternate-name { font-size: 25px; }
  .academic-link { min-height: 36px; padding-inline: 10px; font-size: 12px; }
  .hero-focus { font-size: 17px; }
+ .home-news { margin-bottom: 32px; padding-top: 32px; }
+ .news-item { grid-template-columns: minmax(0,1fr); gap: 7px; padding: 18px 14px; }
+ .news-item.news-pinned { padding-left: 12px; }
+ .news-date { padding-top: 0; font-size: 13px; }
+ .news-title { font-size: 16px; }
  .home-biography { padding-top: 32px; }
  .home-section-title { font-size: 25px; }
  .contact-footer { grid-template-columns: minmax(0,1fr); gap: 16px; padding-top: 25px; }
