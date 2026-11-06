@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160" role="img" aria-labelledby="robustness-title robustness-description" font-family="Arial, sans-serif">
+  <title id="robustness-title">Adversarial robustness in visual perception</title>
+  <desc id="robustness-description">The same recognizable stop-sign scene is shown as a clean input and an adversarial input with small visual perturbations near the sign contours. Arrows lead to illustrative model responses, Stop sign for the clean input and an incorrect Speed limit for the perturbed input. This is a qualitative research concept illustration, not experimental data.</desc>
+  <defs>
+    <clipPath id="robustness-panel">
+      <rect width="132" height="79" rx="4"/>
+    </clipPath>
+    <g id="stop-sign-scene">
+      <rect width="132" height="79" fill="#f2f1e8"/>
+      <path d="M0 46L28 41L53 47L83 40L110 44L132 39V79H0Z" fill="#dbe5da"/>
+      <path d="M78 47H106L132 79H53Z" fill="#bdcfc2"/>
+      <path d="M97 55L105 64M112 71L119 79" stroke="#f7f7f2" stroke-width="2"/>
+      <path d="M51 47V76" stroke="#789782" stroke-width="4"/>
+      <path d="M41 11H61L75 25V45L61 59H41L27 45V25Z" fill="#ac704f"/>
+      <path d="M42 15H60L71 26V44L60 55H42L31 44V26Z" fill="none" stroke="#f7f7f2" stroke-width="1"/>
+      <text x="51" y="39" text-anchor="middle" fill="#fff" font-size="11.5" font-weight="700">STOP</text>
+    </g>
+  </defs>
+  <text x="10" y="20" fill="#46685a" font-size="11.5">Clean input</text>
+  <text x="158" y="20" fill="#46685a" font-size="11.5">Adversarial input</text>
+  <g transform="translate(10 29)" clip-path="url(#robustness-panel)">
+    <use href="#stop-sign-scene"/>
+  </g>
+  <g transform="translate(158 29)" clip-path="url(#robustness-panel)">
+    <use href="#stop-sign-scene"/>
+    <g fill="#26766c" opacity="0.65">
+      <rect x="38" y="10" width="3" height="2"/>
+      <rect x="56" y="13" width="2" height="3"/>
+      <rect x="69" y="20" width="3" height="2"/>
+      <rect x="73" y="35" width="2" height="3"/>
+      <rect x="63" y="51" width="3" height="2"/>
+      <rect x="39" y="55" width="2" height="3"/>
+      <rect x="28" y="40" width="3" height="2"/>
+      <rect x="31" y="23" width="2" height="3"/>
+    </g>
+    <g fill="#b17d59" opacity="0.8">
+      <rect x="45" y="8" width="2" height="3"/>
+      <rect x="63" y="14" width="3" height="2"/>
+      <rect x="76" y="28" width="2" height="2"/>
+      <rect x="70" y="47" width="3" height="2"/>
+      <rect x="54" y="57" width="2" height="3"/>
+      <rect x="32" y="49" width="3" height="2"/>
+      <rect x="25" y="30" width="2" height="3"/>
+    </g>
+  </g>
+  <rect x="10" y="29" width="132" height="79" rx="4" fill="none" stroke="#c7d5c9"/>
+  <rect x="158" y="29" width="132" height="79" rx="4" fill="none" stroke="#c7d5c9"/>
+  <path d="M76 112V124M72 120L76 124L80 120" fill="none" stroke="#789782" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M224 112V124M220 120L224 124L228 120" fill="none" stroke="#b17d59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="31" y="130" width="90" height="23" rx="4" fill="#e1e9df" stroke="#a9bfb0"/>
+  <text x="76" y="146" text-anchor="middle" fill="#26766c" font-size="11.5">Stop sign</text>
+  <rect x="179" y="130" width="90" height="23" rx="4" fill="#f1e2d6" stroke="#c8997b"/>
+  <text x="224" y="146" text-anchor="middle" fill="#ac704f" font-size="11.5" font-weight="700">Speed limit</text>
+</svg>

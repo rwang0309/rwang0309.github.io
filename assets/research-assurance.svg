@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160" role="img" aria-labelledby="assurance-title assurance-description" font-family="Arial, sans-serif">
+  <title id="assurance-title">Dependability assurance</title>
+  <desc id="assurance-description">Concept illustration of a safety claim connected to test evidence and confidence assessment.</desc>
+  <path d="M150 57V77H74V100M150 77H225V100" fill="none" stroke="#98b3a2" stroke-width="1.5"/>
+  <rect x="106" y="27" width="88" height="31" rx="3" fill="#26766c"/>
+  <text x="150" y="47" text-anchor="middle" fill="#fff" font-size="11">Safety claim</text>
+  <rect x="27" y="101" width="94" height="31" rx="3" fill="#e1e9df" stroke="#a9bfb0"/>
+  <rect x="178" y="101" width="94" height="31" rx="3" fill="#e1e9df" stroke="#a9bfb0"/>
+  <text x="74" y="120" text-anchor="middle" fill="#46685a" font-size="11">Test evidence</text>
+  <text x="225" y="120" text-anchor="middle" fill="#46685a" font-size="11">Confidence</text>
+  <circle cx="150" cy="77" r="4" fill="#b17d59"/>
+</svg>

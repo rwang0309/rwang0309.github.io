@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160" role="img" aria-labelledby="uncertainty-title uncertainty-description" font-family="Arial, sans-serif">
+  <title id="uncertainty-title">Uncertainty in visual perception</title>
+  <desc id="uncertainty-description">A semantic prediction of a road, vehicle and partly occluded pedestrian is paired with an aligned uncertainty map. Warm regions indicate qualitative uncertainty near the vehicle boundary and the occluded pedestrian. This is a research concept illustration, not experimental data.</desc>
+  <defs>
+    <clipPath id="uncertainty-panel">
+      <rect width="132" height="96" rx="4"/>
+    </clipPath>
+    <radialGradient id="uncertainty-hotspot">
+      <stop offset="0" stop-color="#ac704f" stop-opacity="0.95"/>
+      <stop offset="0.48" stop-color="#d4b487" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#dbe8df" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="uncertainty-scale">
+      <stop offset="0" stop-color="#dbe8df"/>
+      <stop offset="0.55" stop-color="#d4b487"/>
+      <stop offset="1" stop-color="#ac704f"/>
+    </linearGradient>
+    <g id="perception-scene">
+      <rect width="132" height="96" fill="#f2f1e8"/>
+      <path d="M0 4H26V40H0ZM105 0H132V43H105Z" fill="#dbe5da"/>
+      <path d="M37 34H94L132 96H0Z" fill="#b9cec2"/>
+      <path d="M0 40L37 34L0 96ZM94 34L132 40V96Z" fill="#e5e5d5"/>
+      <path d="M66 48V59M66 74V91" stroke="#f7f7f2" stroke-width="3"/>
+      <path d="M49 55H76L83 69V82H43V69Z" fill="#26766c"/>
+      <path d="M53 59H73L77 68H49Z" fill="#d8e5dd"/>
+      <path d="M48 79V86M78 79V86" stroke="#46685a" stroke-width="5" stroke-linecap="round"/>
+      <path d="M47 74H53M73 74H79" stroke="#f2f1e8" stroke-width="2"/>
+      <circle cx="101" cy="43" r="4.5" fill="#b17d59"/>
+      <path d="M97 49H105V62H97Z" fill="#b17d59"/>
+      <path d="M98 61L96 74M103 61L106 73M98 51L93 60M104 51L109 58" fill="none" stroke="#b17d59" stroke-width="3" stroke-linecap="round"/>
+      <path d="M113 39V78" stroke="#789782" stroke-width="4"/>
+      <path d="M107 47C101 41 104 32 110 31C111 22 125 22 127 32C136 38 133 49 126 52V71H107Z" fill="#8eac96"/>
+    </g>
+  </defs>
+  <text x="10" y="20" fill="#46685a" font-size="11.5">Prediction</text>
+  <text x="158" y="20" fill="#46685a" font-size="11.5">Uncertainty</text>
+  <g transform="translate(10 29)" clip-path="url(#uncertainty-panel)">
+    <use href="#perception-scene"/>
+  </g>
+  <g transform="translate(158 29)" clip-path="url(#uncertainty-panel)">
+    <rect width="132" height="96" fill="#e7eee4"/>
+    <use href="#perception-scene" opacity="0.38"/>
+    <path d="M49 55H76L83 69V82H43V69Z" fill="none" stroke="#d4b487" stroke-width="6" stroke-linejoin="round" opacity="0.6"/>
+    <ellipse cx="44" cy="73" rx="12" ry="15" fill="url(#uncertainty-hotspot)"/>
+    <ellipse cx="81" cy="73" rx="11" ry="16" fill="url(#uncertainty-hotspot)"/>
+    <ellipse cx="105" cy="55" rx="15" ry="22" fill="url(#uncertainty-hotspot)"/>
+    <path d="M105 44V65" stroke="#ac704f" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+  </g>
+  <rect x="10" y="29" width="132" height="96" rx="4" fill="none" stroke="#c7d5c9"/>
+  <rect x="158" y="29" width="132" height="96" rx="4" fill="none" stroke="#c7d5c9"/>
+  <text x="174" y="147" fill="#536d64" font-size="10.5">Low</text>
+  <rect x="200" y="139" width="51" height="7" rx="3.5" fill="url(#uncertainty-scale)"/>
+  <text x="260" y="147" fill="#536d64" font-size="10.5">High</text>
+</svg>
