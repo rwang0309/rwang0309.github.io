@@ -38,21 +38,49 @@
   const papers = [...document.querySelectorAll('.publication')];
   const languageLink = document.querySelector('.language-switch');
   const languageBase = languageLink.getAttribute('href');
-  const topics = buttons.map(button=>button.dataset.filter);
-  function filterPapers(topic, updateURL) {
-    if(!topics.includes(topic)) topic='all';
-    buttons.forEach(button=>{
-      const active=button.dataset.filter===topic;
-      button.classList.toggle('active',active);
-      button.setAttribute('aria-pressed',String(active));
-    });
-    papers.forEach(paper=>{paper.hidden=topic!=='all'&&paper.dataset.topic!==topic;});
-    const query=topic==='all'?'':`?topic=${encodeURIComponent(topic)}`;
-    languageLink.setAttribute('href',languageBase+query);
-    if(updateURL && location.protocol!=='file:') history.replaceState(null,'',location.pathname+query);
+  const emptyMessage = document.querySelector('.publications-empty');
+  const filters = { topic: 'all', kind: 'all' };
+
+  function readFilters() {
+    const params = new URLSearchParams(location.search);
+    for (const group of Object.keys(filters)) {
+      const selected = params.get(group);
+      const valid = buttons.some(button => button.dataset.filterGroup === group && button.dataset.filter === selected);
+      filters[group] = valid ? selected : 'all';
+    }
   }
-  buttons.forEach(button=>button.addEventListener('click',()=>filterPapers(button.dataset.filter,true)));
-  const selectedTopic=()=>new URLSearchParams(location.search).get('topic')||'all';
-  filterPapers(selectedTopic(),false);
-  window.addEventListener('popstate',()=>filterPapers(selectedTopic(),false));
+
+  function filterPapers(updateURL) {
+    buttons.forEach(button => {
+      const active = button.dataset.filter === filters[button.dataset.filterGroup];
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+    papers.forEach(paper => {
+      paper.hidden = (filters.topic !== 'all' && paper.dataset.topic !== filters.topic)
+        || (filters.kind !== 'all' && paper.dataset.kind !== filters.kind);
+    });
+    emptyMessage.hidden = papers.some(paper => !paper.hidden);
+    const params = new URLSearchParams(location.search);
+    for (const [group, value] of Object.entries(filters)) {
+      if (value === 'all') params.delete(group);
+      else params.set(group, value);
+    }
+    const query = params.toString() ? `?${params}` : '';
+    languageLink.setAttribute('href', languageBase + query + location.hash);
+    if (updateURL && location.protocol !== 'file:') {
+      history.replaceState(null, '', location.pathname + query + location.hash);
+    }
+  }
+
+  buttons.forEach(button => button.addEventListener('click', () => {
+    filters[button.dataset.filterGroup] = button.dataset.filter;
+    filterPapers(true);
+  }));
+  readFilters();
+  filterPapers(false);
+  window.addEventListener('popstate', () => {
+    readFilters();
+    filterPapers(false);
+  });
 })();
